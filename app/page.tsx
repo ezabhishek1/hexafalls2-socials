@@ -1,7 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Instagram, Linkedin, Twitter, MousePointerClick } from "lucide-react";
+import {
+  Instagram,
+  Linkedin,
+  Twitter,
+  MousePointerClick,
+  Youtube,
+} from "lucide-react";
 import SocialLink from "@/components/SocialLink";
 import { RiDiscordLine } from "react-icons/ri";
 
@@ -14,65 +20,89 @@ export default function Home() {
 
   return (
     <main
-      className="relative min-h-screen w-full bg-black bg-cover bg-center overflow-hidden"
-      style={{ backgroundImage: "url('/shack_backdoor.jpg')" }}
+      className="relative min-h-screen w-full overflow-hidden bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: "url('/Diagon_Alley14.jpg')" }}
     >
-      <div className="fixed inset-0 z-10 bg-gradient-to-br from-black/70 via-black/50 to-transparent pointer-events-none"></div>
-
       {mounted && (
-        <div className="relative z-20 flex flex-col items-center justify-center min-h-screen px-4 text-center">
-          <h1 className="text-5xl md:text-7xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-green-300 via-green-400 to-emerald-500 animate-pulse">
-            Hexafalls 2025
+        <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 py-16">
+          {/* ===== Title ===== */}
+          <h1
+            className="text-5xl sm:text-6xl md:text-7xl font-bold mb-2 magic-shimmer animate-fade-in-up tracking-tight text-center"
+            style={{
+              fontFamily: "'Georgia', 'Times New Roman', serif",
+              animationDelay: "0.1s",
+            }}
+          >
+            HexaFalls 2
           </h1>
 
-          <p className="text-lg md:text-xl text-gray-300 mb-12">
-            JIS University&apos;s premier hackathon
+          {/* ===== Subtitle ===== */}
+          <p
+            className="text-base sm:text-lg text-[#f5e6c8]/50 mb-12 animate-fade-in-up text-center"
+            style={{
+              fontFamily: "'Georgia', 'Times New Roman', serif",
+              animationDelay: "0.3s",
+            }}
+          >
+            JIS University&apos;s Premier TechFest
           </p>
 
-          <div className="flex flex-col gap-6 w-full max-w-xs">
+          {/* ===== Social Links ===== */}
+          <div
+            className="flex flex-col gap-4 w-full max-w-sm animate-fade-in-up"
+            style={{ animationDelay: "0.5s" }}
+          >
             <SocialLink
-              href="https://www.instagram.com/hexafalls_/"
-              icon={<Instagram className="w-6 h-6" />}
+              href="https://hexafalls.org//"
+              icon={<MousePointerClick className="w-5 h-5" />}
+              label="Register Now ⚡"
+              handle="hexafalls.org"
+              delay="0.5s"
+            />
+
+
+            <SocialLink
+              href="https://www.instagram.com"
+              icon={<Instagram className="w-5 h-5" />}
               label="Instagram"
+              handle="@hexafalls_"
               delay="0s"
             />
 
             <SocialLink
-              href="https://x.com/hexafalls"
-              icon={<Twitter className="w-6 h-6" />}
+              href="https://x.com"
+              icon={<Twitter className="w-5 h-5" />}
               label="Twitter"
+              handle="@hexafalls"
+              delay="0.1s"
+            />
+
+            <SocialLink
+              href="https://www.linkedin.com"
+              icon={<Linkedin className="w-5 h-5" />}
+              label="LinkedIn"
+              handle="hexafalls"
               delay="0.2s"
             />
 
             <SocialLink
-              href="https://www.linkedin.com/company/hexafalls/"
-              icon={<Linkedin className="w-6 h-6" />}
-              label="LinkedIn"
-              delay="0.4s"
-            />
-
-            <SocialLink
-              href="https://discord.gg/cYdBDCXuPu"
-              icon={<RiDiscordLine className="w-6 h-6" />}
+              href="https://discord.gg"
+              icon={<RiDiscordLine className="w-5 h-5" />}
               label="Discord"
-              delay="0.4s"
+              handle="Join our server"
+              delay="0.3s"
             />
 
             <SocialLink
-              href="https://www.hexafalls.tech/"
-              icon={<MousePointerClick className="w-6 h-6" />}
-              label="Register Now ⚡"
+              href="https://www.youtube.com/@"
+              icon={<Youtube className="w-5 h-5" />}
+              label="YouTube"
+              handle="@HexafallsHackathon"
               delay="0.4s"
             />
 
-            <SocialLink
-              href="https://www.youtube.com/@HexafallsHackathon"
-              icon={<MousePointerClick className="w-6 h-6" />}
-              label="Youtube"
-              delay="0.4s"
-            />
-          </div>
-        </div>
+
+          </div>        </div>
       )}
     </main>
   );
