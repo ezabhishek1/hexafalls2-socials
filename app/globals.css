@@ -2,17 +2,68 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ===== HexaFalls 2 Color Palette ===== */
 :root {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 0, 0, 0;
-  --background-end-rgb: 0, 0, 0;
+  /* Dark backgrounds */
+  --hf-obsidian: #081018;
+  --hf-void: #101820;
+  --hf-navy: #172230;
+  --hf-slate: #243447;
+  --hf-ocean: #1E2D3D;
+  --hf-graphite: #31465A;
+
+  /* Cyan / Teal accents */
+  --hf-cyan: #66FCF1;
+  --hf-teal: #4DEEEA;
+  --hf-aqua: #7AF7FF;
+  --hf-sky: #8ECAE6;
+  --hf-ocean-blue: #219EBC;
+  --hf-deep-teal: #0E7490;
+
+  /* Orange / Warm accents */
+  --hf-amber: #FFB703;
+  --hf-sunset: #FFCB47;
+  --hf-honey: #FFD166;
+  --hf-orange: #F97316;
+  --hf-burnt: #EA580C;
+
+  /* Neutrals */
+  --hf-silver: #C5C6C7;
+  --hf-cream: #FFF8EE;
+  --hf-parchment: #F6F1E9;
+  --hf-ivory: #EAE7DC;
 }
 
+/* ===== Global Body ===== */
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  color: var(--hf-cream);
+  background: linear-gradient(
+    165deg,
+    var(--hf-obsidian) 0%,
+    var(--hf-void) 40%,
+    var(--hf-navy) 70%,
+    var(--hf-obsidian) 100%
+  );
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
+/* ===== Custom Scrollbar ===== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--hf-obsidian);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--hf-graphite);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--hf-ocean-blue);
+}
+
+/* ===== Float Animation ===== */
 @keyframes float {
   0% {
     transform: translateY(0px);
@@ -24,23 +75,88 @@ body {
     transform: translateY(0px);
   }
 }
-
 .animate-float {
   animation-name: float;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
 }
 
-@keyframes pulse {
-  0%,
-  100% {
-    opacity: 1;
+/* ===== Glow Pulse (Cards) ===== */
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(102, 252, 241, 0.1),
+                0 0 20px rgba(102, 252, 241, 0.05);
   }
   50% {
-    opacity: 0.8;
+    box-shadow: 0 0 14px rgba(102, 252, 241, 0.2),
+                0 0 30px rgba(102, 252, 241, 0.08);
   }
 }
+.animate-glow {
+  animation: glowPulse 4s ease-in-out infinite;
+}
 
-.animate-pulse {
-  animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+/* ===== Title Shimmer ===== */
+@keyframes shimmer {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+.title-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--hf-orange) 0%,
+    var(--hf-amber) 25%,
+    var(--hf-sunset) 40%,
+    var(--hf-cream) 50%,
+    var(--hf-sunset) 60%,
+    var(--hf-amber) 75%,
+    var(--hf-orange) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 4s linear infinite;
+}
+
+/* ===== Fade In Up ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in-up {
+  animation: fadeInUp 0.7s ease-out forwards;
+  opacity: 0;
+}
+
+/* ===== Accent Divider ===== */
+.accent-divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--hf-graphite) 20%,
+    var(--hf-cyan) 50%,
+    var(--hf-graphite) 80%,
+    transparent 100%
+  );
+  opacity: 0.3;
+}
+
+/* ===== Glass Card ===== */
+.hf-glass {
+  background: rgba(30, 45, 61, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(102, 252, 241, 0.08);
 }
