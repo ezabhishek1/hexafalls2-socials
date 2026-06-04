@@ -5,6 +5,7 @@ export interface SocialLinkProps {
   href: string;
   icon: React.ReactNode;
   label: string;
+  handle?: string;
   delay: string;
 }
 
@@ -12,6 +13,7 @@ export default function SocialLink({
   href,
   icon,
   label,
+  handle,
   delay,
 }: SocialLinkProps) {
   return (
@@ -19,17 +21,59 @@ export default function SocialLink({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="group relative flex rounded-3xl items-center gap-4 p-4  bg-black/30 backdrop-blur-sm border border-green-500/20 hover:border-green-400/60 transition-all duration-300 hover:shadow-[0_0_15px_rgba(74,222,128,0.5)] animate-float"
+      className="group relative flex items-center gap-4 p-4 rounded-2xl
+        hf-glass animate-glow
+        border border-[#66FCF1]/10
+        hover:border-[#66FCF1]/30
+        transition-all duration-400 ease-out
+        hover:scale-[1.02] hover:shadow-[0_0_25px_rgba(102,252,241,0.12)]
+        animate-float"
       style={{
         animationDelay: delay,
-        animationDuration: "3s",
+        animationDuration: "4s",
       }}
     >
-      <div className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-green-400 to-emerald-600 text-black">
+      {/* Icon circle */}
+      <div
+        className="relative flex items-center justify-center w-11 h-11 rounded-full shrink-0
+        bg-gradient-to-br from-[#F97316] via-[#FFB703] to-[#EA580C]
+        text-[#081018]
+        group-hover:shadow-[0_0_16px_rgba(249,115,22,0.4)]
+        transition-shadow duration-400"
+      >
         {icon}
       </div>
-      <span className="text-white font-medium">{label}</span>
-      <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-green-400/0 via-green-400/5 to-emerald-600/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+      {/* Text */}
+      <div className="flex flex-col min-w-0">
+        <span className="text-[#FFF8EE] font-medium text-[15px] group-hover:text-[#66FCF1] transition-colors duration-300">
+          {label}
+        </span>
+        {handle && (
+          <span className="text-[#C5C6C7]/50 text-xs mt-0.5 truncate">
+            {handle}
+          </span>
+        )}
+      </div>
+
+      {/* Arrow */}
+      <div className="ml-auto text-[#31465A] group-hover:text-[#66FCF1]/60 group-hover:translate-x-1 transition-all duration-300">
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M6 3L11 8L6 13"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </div>
     </Link>
   );
 }
