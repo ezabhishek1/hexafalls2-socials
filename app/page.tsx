@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <main
       className="relative min-h-screen w-full overflow-hidden bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: "url('/Diagon_Alley14.jpg')" }}
+      style={{ backgroundImage: "url('Diagon_Alley14.jpg')" }}
     >
       {mounted && (
         <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 py-16">
@@ -62,7 +62,7 @@ export default function Home() {
 
 
             <SocialLink
-              href="https://www.instagram.com"
+              href="https://www.instagram.com/hexafalls_"
               icon={<Instagram className="w-5 h-5" />}
               label="Instagram"
               handle="@hexafalls_"

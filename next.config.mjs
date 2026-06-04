@@ -11,8 +11,12 @@ try {
   }
 }
 
+const isGithubActions = process.env.GITHUB_ACTIONS === 'true';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
+  basePath: isGithubActions ? '/hexafalls2-socials' : undefined,
   eslint: {
     ignoreDuringBuilds: true,
   },
