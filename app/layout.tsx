@@ -7,10 +7,10 @@ import { Analytics } from "@vercel/analytics/react";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Hexafalls 2025 | JIS University's Premier Hackathon",
+  title: "HexaFalls 2 2026 | JIS University's Premier TechFest",
   description:
-    "Connect with Hexafalls 2025, JIS University's premier hackathon.",
-  authors: { name: "Manish Gupta" },
+    "Connect with HexaFalls 2 — JIS University's premier TechFest. July 24–26, 2026.",
+  authors: { name: "Abhishek Gupta" },
 };
 
 export default function RootLayout({
@@ -23,11 +23,11 @@ export default function RootLayout({
       <head>
         <meta
           property="og:title"
-          content="Hexafalls 2025 | JIS University's Premier Hackathon"
+          content="HexaFalls 2 2026 | JIS University's Premier TechFest"
         />
         <meta
           property="og:description"
-          content="Connect with Hexafalls 2025, JIS University's premier hackathon."
+          content="Connect with HexaFalls 2 — JIS University's premier TechFest. July 24–26, 2026."
         />
         <meta property="og:image" content="https://hexafalls-socials.vercel.app/preview.png" />
         <link rel="icon" href="/favicon.ico" />
