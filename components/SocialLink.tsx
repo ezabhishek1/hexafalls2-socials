@@ -33,7 +33,7 @@ export default function SocialLink({
         animationDuration: "4s",
       }}
     >
-      {/* Icon circle */}
+
       <div
         className="relative flex items-center justify-center w-11 h-11 rounded-full shrink-0
         bg-gradient-to-br from-[#F97316] via-[#FFB703] to-[#EA580C]
@@ -44,7 +44,7 @@ export default function SocialLink({
         {icon}
       </div>
 
-      {/* Text */}
+
       <div className="flex flex-col min-w-0">
         <span className="text-[#FFF8EE] font-medium text-[15px] group-hover:text-[#66FCF1] transition-colors duration-300">
           {label}
@@ -56,7 +56,6 @@ export default function SocialLink({
         )}
       </div>
 
-      {/* Arrow */}
       <div className="ml-auto text-[#31465A] group-hover:text-[#66FCF1]/60 group-hover:translate-x-1 transition-all duration-300">
         <svg
           width="16"

@@ -78,7 +78,7 @@ export default function Home() {
             />
 
             <SocialLink
-              href="https://www.linkedin.com"
+              href="https://www.linkedin.com/company/hexafalls/?viewAsMember=true"
               icon={<Linkedin className="w-5 h-5" />}
               label="LinkedIn"
               handle="hexafalls"
