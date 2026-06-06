@@ -70,7 +70,7 @@ export default function Home() {
             />
 
             <SocialLink
-              href="https://x.com"
+              href="https://x.com/hexafalls"
               icon={<Twitter className="w-5 h-5" />}
               label="Twitter"
               handle="@hexafalls"
