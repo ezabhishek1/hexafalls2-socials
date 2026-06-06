@@ -78,7 +78,7 @@ export default function Home() {
             />
 
             <SocialLink
-              href="https://www.linkedin.com/company/hexafalls/?viewAsMember=true"
+              href="https://www.linkedin.com/company/hexafalls/"
               icon={<Linkedin className="w-5 h-5" />}
               label="LinkedIn"
               handle="hexafalls"
@@ -86,7 +86,7 @@ export default function Home() {
             />
 
             <SocialLink
-              href="https://discord.gg"
+              href="https://discord.gg/FdgCkrmrG"
               icon={<RiDiscordLine className="w-5 h-5" />}
               label="Discord"
               handle="Join our server"
@@ -94,7 +94,7 @@ export default function Home() {
             />
 
             <SocialLink
-              href="https://www.youtube.com/@"
+              href="https://www.youtube.com/@hexafalls"
               icon={<Youtube className="w-5 h-5" />}
               label="YouTube"
               handle="@HexafallsHackathon"
